@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GigaBench</title>
+  <meta name="description" content="GigaBench: a benchmark of ten gigapixel images for Learnable Representations, covering image compression and super-resolution. WACV 2027.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M3 11V3h8M21 3h8v8M29 21v8h-8M11 29H3v-8' fill='none' stroke='%23E3A21A' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="masthead wrap">
+  <h1 class="wordmark">GigaBench</h1>
+  <p class="paper-title">Benchmarking Learnable Representations for Gigapixel Image Compression and Super-Resolution</p>
+
+  <ul class="authors">
+    <li>Matteo Fusconi<sup>1</sup></li>
+    <li>Alex Costanzino<sup>1</sup></li>
+    <li>Pierluigi Zama Ramirez<sup>2</sup></li>
+    <li>Luigi Di Stefano<sup>1</sup></li>
+  </ul>
+  <ul class="affiliations">
+    <li><sup>1</sup>CVLab, University of Bologna</li>
+    <li><sup>2</sup>Ca' Foscari University of Venice</li>
+  </ul>
+
+  <div class="links-row">
+    <p class="venue">WACV 2027</p>
+    <nav class="links" aria-label="Paper resources">
+      <a class="pending" aria-disabled="true">Paper <span class="soon">soon</span></a>
+      <a class="pending" aria-disabled="true">arXiv <span class="soon">soon</span></a>
+      <a href="https://github.com/MatteoFusconi/GigaBench">Code</a>
+      <a class="pending" aria-disabled="true">Dataset <span class="soon">soon</span></a>
+      <a href="#citation">BibTeX</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="gallery" aria-labelledby="gallery-title">
+    <div class="wrap gallery-head">
+      <div>
+        <h2 id="gallery-title">Ten gigapixel images</h2>
+        <p class="hint">Pick an image to explore it at full resolution.</p>
+      </div>
+      <div class="strip-buttons">
+        <button type="button" class="icon-btn" data-step="-1" aria-label="Previous images">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <button type="button" class="icon-btn" data-step="1" aria-label="Next images">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="strip" id="strip">
+      <ul class="track" id="track"></ul>
+    </div>
+  </section>
+
+  <section class="explorer" aria-label="Image viewer">
+    <div class="stage" id="stage">
+      <div class="viewer" id="viewer"></div>
+      <p class="status" id="status" role="status"></p>
+      <p class="wheel-hint" id="wheel-hint" aria-hidden="true"></p>
+      <div class="tools">
+        <button type="button" class="icon-btn" id="zoom-in" aria-label="Zoom in">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <button type="button" class="icon-btn" id="zoom-out" aria-label="Zoom out">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>
+        </button>
+        <button type="button" class="icon-btn" id="zoom-home" aria-label="Show the whole image">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></svg>
+        </button>
+        <button type="button" class="icon-btn" id="fullscreen" aria-label="Full screen">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l6 6M20 4l-6 6M4 20l6-6M20 20l-6-6"/></svg>
+        </button>
+      </div>
+      <div class="readout" id="readout" aria-live="off">
+        <span id="readout-zoom"></span>
+        <span id="readout-view"></span>
+      </div>
+    </div>
+
+    <div class="wrap facts">
+      <h2 id="image-name"></h2>
+      <dl>
+        <div><dt>Domain</dt><dd id="fact-domain"></dd></div>
+        <div><dt>Resolution</dt><dd id="fact-resolution"></dd></div>
+        <div><dt>Gigapixels</dt><dd id="fact-gpx"></dd></div>
+        <div><dt>Raw size</dt><dd id="fact-size"></dd></div>
+        <div><dt>License</dt><dd id="fact-license"></dd></div>
+        <div><dt>Credit</dt><dd id="fact-credit"></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="wrap prose" aria-labelledby="abstract-title">
+    <h2 id="abstract-title">Abstract</h2>
+    <p>Learnable Representations (LRs) can fit parametric families of functions to diverse kinds of signals. These emergent neural-native data formats are gathering interest in the scientific community due to their compactness, resolution-agnosticism and amenability to direct neural processing. On the other hand, gigapixel images are becoming increasingly widespread across a variety of scientific, cultural, and industrial domains.</p>
+    <p>In this paper, we present GigaBench, a novel benchmark and experimental evaluation focused on deploying LRs with gigapixel imagery. GigaBench includes images collected, acquired, and synthetically rendered across diverse domains, and addresses image compression and super-resolution. We adapt a representative set of LRs, spanning Implicit, Hybrid, and Explicit methods, so as to operate reliably at the gigapixel scale on consumer hardware. Through systematic evaluation across reconstruction quality, model size, compression and inference times, we identify consistent trends across methods and suggest actionable guidance for future investigation.</p>
+  </section>
+
+  <section class="wrap citation" id="citation" aria-labelledby="citation-title">
+    <div class="citation-head">
+      <h2 id="citation-title">Citation</h2>
+      <button type="button" class="text-btn" id="copy-bibtex">Copy BibTeX</button>
+    </div>
+<pre id="bibtex">@inproceedings{fusconi2027benchmarking,
+  title     = {{Benchmarking Learnable Representations for Gigapixel Image Compression and Super-Resolution}},
+  author    = {Fusconi, Matteo and Costanzino, Alex and Zama Ramirez, Pierluigi and Di Stefano, Luigi},
+  booktitle = {IEEE/CVF Winter Conference on Applications of Computer Vision},
+  year      = {2027}
+}</pre>
+  </section>
+</main>
+
+<footer class="wrap footer">
+  <p>Code released under the MIT License. The dataset is released under CC BY-NC 4.0; each image also keeps the original license and credit shown in the viewer.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.1/openseadragon.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
