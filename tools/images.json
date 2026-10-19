@@ -1,0 +1,102 @@
+[
+  {
+    "id": "venice",
+    "name": "Venice",
+    "file": "Venice.tif",
+    "domain": "Panorama",
+    "license": "CC BY-NC 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "attribution": "Jeffrey Martin",
+    "source_url": "https://www.jeffrey-martin.com/"
+  },
+  {
+    "id": "statuario",
+    "name": "Statuario",
+    "file": "Statuario.tif",
+    "domain": "Industrial",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution": "Anonymous",
+    "source_url": ""
+  },
+  {
+    "id": "calacatta-viola",
+    "name": "Calacatta Viola",
+    "file": "CalacattaViola.tif",
+    "domain": "Industrial",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "attribution": "Anonymous",
+    "source_url": ""
+  },
+  {
+    "id": "breast-cancer",
+    "name": "Breast Cancer",
+    "file": "BreastCancer.tif",
+    "domain": "Scientific",
+    "license": "CC BY-NC 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+    "attribution": "BRACS",
+    "source_url": "https://www.bracs.icar.cnr.it/"
+  },
+  {
+    "id": "kidney",
+    "name": "Kidney",
+    "file": "MouseKidneyCancer.tif",
+    "domain": "Scientific",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "KPIs Challenge 2024",
+    "source_url": "https://sites.google.com/view/kpis2024"
+  },
+  {
+    "id": "munich",
+    "name": "Munich",
+    "file": "Munich.tif",
+    "domain": "Satellite",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Bayerische Vermessungsverwaltung",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Digitales_Orthofoto_von_M%C3%BCnchen_(Bayerische_Vermessungsverwaltung).tif"
+  },
+  {
+    "id": "andromeda",
+    "name": "Andromeda",
+    "file": "Andromeda.tif",
+    "domain": "Satellite",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "ESA/Hubble",
+    "source_url": "https://esahubble.org/images/heic1502a/"
+  },
+  {
+    "id": "italy",
+    "name": "Italy",
+    "file": "Italy.tif",
+    "domain": "Satellite",
+    "license": "Copernicus open data",
+    "license_url": "",
+    "attribution": "Contains modified Copernicus Sentinel data (2025)",
+    "source_url": "https://browser.dataspace.copernicus.eu/"
+  },
+  {
+    "id": "lynxsdesign",
+    "name": "Lynxsdesign",
+    "file": "Lynxsdesign.tif",
+    "domain": "Synthetic",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Lynxsdesign",
+    "source_url": "https://lynxsdesign.com/"
+  },
+  {
+    "id": "house-of-chores",
+    "name": "House of Chores",
+    "file": "HouseOfChores.tif",
+    "domain": "Synthetic",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Blender Studio",
+    "source_url": "https://studio.blender.org/blog/house-of-chores-testing-grease-pencil-30/"
+  }
+]
