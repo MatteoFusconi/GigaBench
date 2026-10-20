@@ -117,10 +117,9 @@ sup { font-size: 0.65em; line-height: 0; margin-left: 0.1em; }
 
 .links-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 12px 24px;
+  gap: 14px;
   margin-top: 28px;
 }
 
@@ -147,11 +146,8 @@ sup { font-size: 0.65em; line-height: 0; margin-left: 0.1em; }
 .gallery { padding-bottom: 20px; }
 
 .gallery-head {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
+  text-align: center;
 }
 
 h2 {
@@ -161,9 +157,33 @@ h2 {
   line-height: 1.2;
 }
 
-.hint { color: var(--muted); font-size: 0.95rem; margin-top: 2px; }
+.tldr h2 {
+  font-size: clamp(1.75rem, 4.2vw, 3.25rem);
+  font-weight: 800;
+  font-stretch: 125%;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.tldr-text {
+  max-width: 62ch;
+  margin: 14px auto 0;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.5;
+}
 
-.strip-buttons { display: flex; gap: 8px; }
+.hint { color: var(--muted); font-size: 0.95rem; margin-top: 10px; }
+
+/* Arrows sit over the faded ends of the strip, centred on the images */
+.strip-wrap { position: relative; }
+.icon-btn.strip-arrow {
+  position: absolute;
+  top: calc(10px + var(--card-h) / 2);
+  translate: 0 -50%;
+  z-index: 1;
+  background: var(--paper);
+}
+.strip-arrow.prev { left: max(8px, calc(var(--gutter) - 20px)); }
+.strip-arrow.next { right: max(8px, calc(var(--gutter) - 20px)); }
 
 .icon-btn {
   display: inline-grid;

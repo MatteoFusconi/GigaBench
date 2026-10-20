@@ -33,8 +33,8 @@
     <nav class="links" aria-label="Paper resources">
       <a class="pending" aria-disabled="true">Paper <span class="soon">soon</span></a>
       <a class="pending" aria-disabled="true">arXiv <span class="soon">soon</span></a>
-      <a href="https://github.com/MatteoFusconi/GigaBench">Code</a>
-      <a class="pending" aria-disabled="true">Dataset <span class="soon">soon</span></a>
+      <a class="pending" aria-disabled="true">Code <span class="soon">soon</span></a>
+      <a href="https://huggingface.co/datasets/Fusco6/GigaBench">Dataset</a>
       <a href="#citation">BibTeX</a>
     </nav>
   </div>
@@ -42,22 +42,21 @@
 
 <main>
   <section class="gallery" aria-labelledby="gallery-title">
-    <div class="wrap gallery-head">
-      <div>
-        <h2 id="gallery-title">Ten gigapixel images</h2>
-        <p class="hint">Pick an image to explore it at full resolution.</p>
-      </div>
-      <div class="strip-buttons">
-        <button type="button" class="icon-btn" data-step="-1" aria-label="Previous images">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-        </button>
-        <button type="button" class="icon-btn" data-step="1" aria-label="Next images">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-        </button>
-      </div>
+    <div class="wrap gallery-head tldr">
+      <h2 id="gallery-title">From megapixels to gigapixels</h2>
+      <p class="tldr-text">Learnable image representations are usually tested on images of a few megapixels. GigaBench is the first benchmark to cross the gigapixel line: ten images of more than a billion pixels each, from five domains.</p>
+      <p class="hint">Pick one to explore it at full resolution.</p>
     </div>
-    <div class="strip" id="strip">
-      <ul class="track" id="track"></ul>
+    <div class="strip-wrap">
+      <div class="strip" id="strip">
+        <ul class="track" id="track"></ul>
+      </div>
+      <button type="button" class="icon-btn strip-arrow prev" data-step="-1" aria-label="Previous images">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <button type="button" class="icon-btn strip-arrow next" data-step="1" aria-label="Next images">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
     </div>
   </section>
 
