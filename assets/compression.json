@@ -1,0 +1,182 @@
+[
+ {
+  "method": "SIREN",
+  "config": "5,256",
+  "family": "Implicit",
+  "psnr": 20.27,
+  "ssim": 0.452,
+  "cr": 2603.82,
+  "ct_min": 18.28,
+  "it_s": 39.66
+ },
+ {
+  "method": "FINER",
+  "config": "5,256",
+  "family": "Implicit",
+  "psnr": 19.18,
+  "ssim": 0.415,
+  "cr": 2603.82,
+  "ct_min": 24.02,
+  "it_s": 71.67
+ },
+ {
+  "method": "FDHO",
+  "config": "5,256",
+  "family": "Implicit",
+  "psnr": 18.81,
+  "ssim": 0.42,
+  "cr": 2603.63,
+  "ct_min": 24.53,
+  "it_s": 30.24
+ },
+ {
+  "method": "SIREN",
+  "config": "8,1024",
+  "family": "Implicit",
+  "psnr": 22.71,
+  "ssim": 0.499,
+  "cr": 102.41,
+  "ct_min": 175.57,
+  "it_s": 431.35
+ },
+ {
+  "method": "FINER",
+  "config": "8,1024",
+  "family": "Implicit",
+  "psnr": 22.67,
+  "ssim": 0.494,
+  "cr": 102.41,
+  "ct_min": 203.61,
+  "it_s": 620.27
+ },
+ {
+  "method": "FDHO",
+  "config": "8,1024",
+  "family": "Implicit",
+  "psnr": 21.79,
+  "ssim": 0.486,
+  "cr": 102.41,
+  "ct_min": 206.22,
+  "it_s": 390.93
+ },
+ {
+  "method": "I-NGP",
+  "config": "T=22",
+  "family": "Hybrid",
+  "psnr": 31.13,
+  "ssim": 0.777,
+  "cr": 15.86,
+  "ct_min": 1.01,
+  "it_s": 11.4
+ },
+ {
+  "method": "I-NGP",
+  "config": "T=24",
+  "family": "Hybrid",
+  "psnr": 33.19,
+  "ssim": 0.839,
+  "cr": 5.09,
+  "ct_min": 1.68,
+  "it_s": 11.5
+ },
+ {
+  "method": "NeuRBF",
+  "config": "T=22",
+  "family": "Hybrid",
+  "psnr": 29.1,
+  "ssim": 0.722,
+  "cr": 15.86,
+  "ct_min": 11.2,
+  "it_s": 44.96
+ },
+ {
+  "method": "NeuRBF",
+  "config": "T=24",
+  "family": "Hybrid",
+  "psnr": 31.08,
+  "ssim": 0.782,
+  "cr": 5.09,
+  "ct_min": 14.76,
+  "it_s": 44.97
+ },
+ {
+  "method": "MetricGrids",
+  "config": "T=22",
+  "family": "Hybrid",
+  "psnr": 31.58,
+  "ssim": 0.784,
+  "cr": 15.86,
+  "ct_min": 12.61,
+  "it_s": 40.17
+ },
+ {
+  "method": "MetricGrids",
+  "config": "T=24",
+  "family": "Hybrid",
+  "psnr": 33.59,
+  "ssim": 0.841,
+  "cr": 5.09,
+  "ct_min": 18.98,
+  "it_s": 40.62
+ },
+ {
+  "method": "GaussianImage",
+  "config": "CR=3000",
+  "family": "Explicit",
+  "psnr": 5.58,
+  "ssim": 0.054,
+  "cr": 3000.0,
+  "ct_min": 32.56,
+  "it_s": 0.55
+ },
+ {
+  "method": "GaussianImage",
+  "config": "CR=100",
+  "family": "Explicit",
+  "psnr": 17.18,
+  "ssim": 0.419,
+  "cr": 100.0,
+  "ct_min": 36.9,
+  "it_s": 1.27
+ },
+ {
+  "method": "GaussianImage",
+  "config": "CR=15",
+  "family": "Explicit",
+  "psnr": 17.74,
+  "ssim": 0.503,
+  "cr": 15.0,
+  "ct_min": 66.54,
+  "it_s": 5.85
+ },
+ {
+  "method": "SmartSplat",
+  "config": "CR=3000",
+  "family": "Explicit",
+  "psnr": 24.05,
+  "ssim": 0.653,
+  "cr": 3000.0,
+  "ct_min": 69.26,
+  "it_s": 0.62
+ },
+ {
+  "method": "SmartSplat",
+  "config": "CR=100",
+  "family": "Explicit",
+  "psnr": 28.74,
+  "ssim": 0.769,
+  "cr": 100.0,
+  "ct_min": 76.97,
+  "it_s": 1.31
+ },
+ {
+  "method": "SmartSplat",
+  "config": "CR=15",
+  "family": "Explicit",
+  "psnr": 30.4,
+  "ssim": 0.886,
+  "cr": 15.0,
+  "ct_min": 98.48,
+  "it_s": 3.36
+ }
+]

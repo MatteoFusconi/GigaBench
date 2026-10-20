@@ -8,6 +8,11 @@
   --stage-ink: #E6EAED;
   --accent: #E3A21A;
 
+  /* Method families, as in the paper's figures (validated on both surfaces) */
+  --implicit: #0072B2;
+  --hybrid: #009E73;
+  --explicit: #D55E00;
+
   --gutter: clamp(16px, 4vw, 48px);
   --max: 1240px;
   --card-h: clamp(140px, 20vw, 240px);
@@ -48,7 +53,7 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-h1, h2, p, ul, dl, dd, pre { margin: 0; }
+h1, h2, h3, p, ul, dl, dd, pre, figure { margin: 0; }
 ul { padding: 0; list-style: none; }
 
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
@@ -103,6 +108,26 @@ sup { font-size: 0.65em; line-height: 0; margin-left: 0.1em; }
   margin-top: 24px;
   font-size: 1.125rem;
   font-weight: 600;
+}
+
+.mail {
+  display: inline-grid;
+  place-items: center;
+  vertical-align: middle;
+  margin-left: 0.1em;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  color: var(--muted);
+}
+.mail:hover { color: var(--ink); background: var(--rule); }
+.mail svg {
+  width: 1.05em;
+  height: 1.05em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
 }
 
 .affiliations {
@@ -352,6 +377,238 @@ h2 {
 }
 .facts dt { color: var(--muted); font-size: 0.85rem; }
 .facts dd { font-weight: 600; overflow-wrap: anywhere; }
+
+/* Results --------------------------------------------------------------- */
+.results { padding-top: clamp(56px, 8vw, 104px); }
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  font-weight: 800;
+  font-stretch: 125%;
+  line-height: 1.1;
+}
+.section-lede {
+  max-width: 62ch;
+  margin: 14px auto 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.metric-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+}
+.metric-box {
+  padding: 12px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+}
+.metric-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 10px;
+}
+.metric-box h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  font-stretch: 110%;
+}
+.metric-box .seg button { display: inline-flex; align-items: center; gap: 2px; }
+.better { display: inline-grid; opacity: 0.75; }
+.better svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.metric-box .seg { margin-top: 0; padding: 2px; }
+.metric-box .seg button { padding: 4px 11px; font-size: 0.82rem; }
+.metric-desc { margin-top: 6px; color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
+
+/* Segmented control */
+.seg {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-top: 10px;
+  padding: 3px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+}
+.seg button {
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.seg button:disabled { cursor: default; }
+.seg button:not([aria-pressed="true"]):hover { color: var(--ink); }
+
+/* Plot and take-home messages side by side, messages centred on the plot;
+   legend and table in the row below the plot. */
+.results-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1fr);
+  grid-template-areas: "switch ." "chart aside" "below aside";
+  grid-template-rows: auto auto 1fr;
+  column-gap: 32px;
+  margin-top: 50px;
+}
+.view-switch { grid-area: switch; justify-self: start; }
+.chart-card { grid-area: chart; margin: 0; }
+.chart-below { grid-area: below; }
+/* Starts under the view switch, level with the top of the plot */
+.takeaways { grid-area: aside; align-self: start; margin-top: 12px; }
+.view-switch { margin-top: 0; }
+.chart { position: relative; margin-top: 12px; }
+#chart-svg { display: block; touch-action: pan-y; cursor: grab; user-select: none; }
+#chart-svg.dragging { cursor: grabbing; }
+
+#chart-svg .grid-lines { stroke: var(--rule); stroke-width: 1; fill: none; }
+#chart-svg .grid-minor { stroke: var(--rule); stroke-width: 1; fill: none; opacity: 0.3; }
+#chart-svg .edge-lines { stroke: var(--rule); stroke-width: 1; fill: none; }
+#chart-svg .axis text { fill: var(--muted); font-size: 12px; }
+#chart-svg .axis .axis-title { fill: var(--ink); font-size: 13px; font-weight: 600; }
+
+/* Markers as in the paper's figures: family symbol and colour, thin dark outline */
+#chart-svg .pt .mark { stroke: rgb(0 0 0 / 0.75); stroke-width: 0.8; }
+#chart-svg .pt .hit { fill: transparent; }
+#chart-svg .pt { cursor: pointer; outline: none; transition: opacity 0.2s; }
+#chart-svg .pt:hover .mark, #chart-svg .pt:focus-visible .mark { stroke: var(--ink); stroke-width: 2; }
+#chart-svg .pt-label { display: none; fill: var(--ink); font-size: 12px; font-weight: 600; paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
+#chart-svg.has-highlight .pt.on .pt-label { display: block; }
+#chart-svg .fam-implicit { --fam: var(--implicit); }
+#chart-svg .fam-hybrid { --fam: var(--hybrid); }
+#chart-svg .fam-explicit { --fam: var(--explicit); }
+#chart-svg .pt .mark { fill: var(--fam); }
+#chart-svg.has-highlight .pt:not(.on) { opacity: 0.15; }
+
+.chart-tip {
+  position: absolute;
+  z-index: 2;
+  min-width: 190px;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--paper);
+  box-shadow: 0 6px 20px rgb(22 33 43 / 0.12);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  pointer-events: none;
+}
+.chart-tip .tip-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; color: var(--muted); }
+.chart-tip strong { color: var(--ink); }
+.tip-key { width: 14px; height: 3px; border-radius: 2px; background: var(--fam); }
+.tip-key.fam-implicit { --fam: var(--implicit); }
+.tip-key.fam-hybrid { --fam: var(--hybrid); }
+.tip-key.fam-explicit { --fam: var(--explicit); }
+
+.chart-hint { margin-top: 4px; color: var(--muted); font-size: 0.85rem; }
+
+/* One row per family: the family, then its methods */
+.legend { display: grid; gap: 6px; margin-top: 16px; }
+.legend-col { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.legend button {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+.legend .legend-family {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 11.5rem;
+  padding: 4px 8px;
+  margin-left: -8px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+.legend-methods { display: flex; flex-wrap: wrap; gap: 4px; }
+.legend .legend-method {
+  padding: 3px 10px;
+  border-radius: 999px;
+  border-color: var(--rule);
+  font-size: 0.85rem;
+}
+.legend button:hover { background: var(--rule); }
+.legend button[aria-pressed="true"] { border-color: var(--accent); background: rgb(227 162 26 / 0.12); }
+.legend-icon { width: 14px; height: 14px; stroke: rgb(0 0 0 / 0.75); stroke-width: 0.8; }
+.legend-icon.fam-implicit { fill: var(--implicit); }
+.legend-icon.fam-hybrid { fill: var(--hybrid); }
+.legend-icon.fam-explicit { fill: var(--explicit); }
+
+.numbers { margin-top: 14px; }
+.numbers summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; }
+.table-scroll { overflow-x: auto; margin-top: 10px; }
+.numbers table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.numbers th, .numbers td { padding: 6px 10px; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap; }
+.numbers th:nth-child(-n+2), .numbers td:nth-child(-n+2) { text-align: left; }
+.numbers th { color: var(--muted); font-weight: 600; }
+
+.takeaways h3 { font-size: 1rem; font-weight: 700; font-stretch: 110%; }
+.takeaways ul { display: grid; gap: 10px; margin-top: 12px; }
+.takeaways button {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--rule);
+  border-radius: 8px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.takeaways button:hover { border-left-color: var(--muted); }
+.takeaways button[aria-pressed="true"] { border-left-color: var(--accent); background: rgb(227 162 26 / 0.08); }
+.tk-figure {
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-stretch: 115%;
+  line-height: 1.1;
+  font-variant-numeric: proportional-nums;
+}
+.tk-title { font-weight: 700; }
+/* Collapsed by default: the description opens on the selected card */
+.tk-text { display: none; margin-top: 4px; color: var(--muted); font-size: 0.9rem; line-height: 1.45; }
+.takeaways button[aria-pressed="true"] .tk-text { display: block; }
+.takeaways-hint { margin-top: 10px; color: var(--muted); font-size: 0.85rem; }
+
+@media (max-width: 980px) {
+  .results-grid { grid-template-columns: 1fr; grid-template-rows: none; grid-template-areas: "switch" "chart" "below" "aside"; }
+  .chart-below { margin-bottom: 32px; }
+}
+@media (max-width: 600px) {
+  .view-switch { display: grid; grid-template-columns: 1fr 1fr; justify-self: stretch; border-radius: 18px; }
+  .view-switch button { border-radius: 14px; }
+}
 
 /* Text sections --------------------------------------------------------- */
 .prose, .citation { padding-block: clamp(48px, 7vw, 88px) 0; }

@@ -18,10 +18,10 @@
   <p class="paper-title">Benchmarking Learnable Representations for Gigapixel Image Compression and Super-Resolution</p>
 
   <ul class="authors">
-    <li>Matteo Fusconi<sup>1</sup></li>
-    <li>Alex Costanzino<sup>1</sup></li>
-    <li>Pierluigi Zama Ramirez<sup>2</sup></li>
-    <li>Luigi Di Stefano<sup>1</sup></li>
+    <li>Matteo Fusconi<sup>1</sup> <a class="mail" href="mailto:matteo.fusconi6@unibo.it" aria-label="Email Matteo Fusconi" title="matteo.fusconi6@unibo.it"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a></li>
+    <li>Alex Costanzino<sup>1</sup> <a class="mail" href="mailto:alex.costanzino@unibo.it" aria-label="Email Alex Costanzino" title="alex.costanzino@unibo.it"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a></li>
+    <li>Pierluigi Zama Ramirez<sup>2</sup> <a class="mail" href="mailto:pier.zamaramirez@unive.it" aria-label="Email Pierluigi Zama Ramirez" title="pier.zamaramirez@unive.it"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a></li>
+    <li>Luigi Di Stefano<sup>1</sup> <a class="mail" href="mailto:luigi.distefano@unibo.it" aria-label="Email Luigi Di Stefano" title="luigi.distefano@unibo.it"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a></li>
   </ul>
   <ul class="affiliations">
     <li><sup>1</sup>CVLab, University of Bologna</li>
@@ -98,6 +98,74 @@
     </div>
   </section>
 
+  <section class="wrap results" id="compression" aria-labelledby="compression-title">
+    <h2 class="section-title" id="compression-title">GigaBench on image compression</h2>
+    <p class="section-lede">Eighteen configurations of eight methods, each fitted to all ten images. Every point is an average over the benchmark, placed by how good, how small and how fast it is.</p>
+
+    <div class="metric-boxes">
+      <div class="metric-box">
+        <div class="metric-head">
+          <h3>Quality</h3>
+          <div class="seg" role="group" aria-label="Quality metric">
+            <button type="button" data-quality="psnr" aria-pressed="true">PSNR <span class="better" title="Higher is better"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span class="sr-only">higher is better</span></span></button>
+            <button type="button" data-quality="ssim" aria-pressed="false">SSIM <span class="better" title="Higher is better"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span class="sr-only">higher is better</span></span></button>
+          </div>
+        </div>
+        <p class="metric-desc" id="quality-desc"></p>
+      </div>
+      <div class="metric-box">
+        <div class="metric-head">
+          <h3>Time</h3>
+          <div class="seg" role="group" aria-label="Time metric">
+            <button type="button" data-time="ct" aria-pressed="false">Compression <span class="better" title="Lower is better"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg><span class="sr-only">lower is better</span></span></button>
+            <button type="button" data-time="it" aria-pressed="true">Inference <span class="better" title="Lower is better"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg><span class="sr-only">lower is better</span></span></button>
+          </div>
+        </div>
+        <p class="metric-desc" id="time-desc"></p>
+      </div>
+      <div class="metric-box">
+        <div class="metric-head">
+          <h3>Size</h3>
+          <div class="seg" role="group" aria-label="Size metric">
+            <button type="button" aria-pressed="true" disabled>Compression Ratio <span class="better" title="Higher is better"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span class="sr-only">higher is better</span></span></button>
+          </div>
+        </div>
+        <p class="metric-desc">Raw image bytes divided by model bytes.</p>
+      </div>
+    </div>
+
+    <div class="results-grid">
+      <div class="seg view-switch" role="group" aria-label="Chart view">
+          <button type="button" data-view="3d" aria-pressed="true">3D</button>
+          <button type="button" data-view="q-cr" aria-pressed="false">Quality × Size</button>
+          <button type="button" data-view="q-t" aria-pressed="false">Quality × Time</button>
+          <button type="button" data-view="t-cr" aria-pressed="false">Time × Size</button>
+      </div>
+
+      <figure class="chart-card">
+        <div class="chart" id="chart">
+          <svg id="chart-svg" role="img" aria-labelledby="compression-title"></svg>
+          <div class="chart-tip" id="chart-tip" hidden></div>
+        </div>
+      </figure>
+
+      <div class="chart-below">
+        <p class="chart-hint">Drag to rotate. Hover a point for its numbers, or pick a family or method below to highlight and label its points.</p>
+        <div class="legend" id="legend"></div>
+        <details class="numbers">
+          <summary>Show all numbers</summary>
+          <div class="table-scroll"><table id="numbers-table"></table></div>
+        </details>
+      </div>
+
+      <aside class="takeaways" aria-labelledby="takeaways-title">
+        <h3 id="takeaways-title">Take-home messages</h3>
+        <ul id="takeaways"></ul>
+        <p class="takeaways-hint">Select a message to read it and highlight its points.</p>
+      </aside>
+    </div>
+  </section>
+
   <section class="wrap prose" aria-labelledby="abstract-title">
     <h2 id="abstract-title">Abstract</h2>
     <p>Learnable Representations (LRs) can fit parametric families of functions to diverse kinds of signals. These emergent neural-native data formats are gathering interest in the scientific community due to their compactness, resolution-agnosticism and amenability to direct neural processing. On the other hand, gigapixel images are becoming increasingly widespread across a variety of scientific, cultural, and industrial domains.</p>
@@ -124,5 +192,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.1/openseadragon.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/compression.js"></script>
 </body>
 </html>
