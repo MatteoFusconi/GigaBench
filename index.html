@@ -144,7 +144,7 @@
 
       <figure class="chart-card">
         <div class="chart" id="chart">
-          <svg id="chart-svg" role="img" aria-labelledby="compression-title"></svg>
+          <svg class="chart-svg" id="chart-svg" role="img" aria-labelledby="compression-title"></svg>
           <div class="chart-tip" id="chart-tip" hidden></div>
         </div>
       </figure>
@@ -166,23 +166,104 @@
     </div>
   </section>
 
-  <section class="wrap prose" aria-labelledby="abstract-title">
-    <h2 id="abstract-title">Abstract</h2>
-    <p>Learnable Representations (LRs) can fit parametric families of functions to diverse kinds of signals. These emergent neural-native data formats are gathering interest in the scientific community due to their compactness, resolution-agnosticism and amenability to direct neural processing. On the other hand, gigapixel images are becoming increasingly widespread across a variety of scientific, cultural, and industrial domains.</p>
-    <p>In this paper, we present GigaBench, a novel benchmark and experimental evaluation focused on deploying LRs with gigapixel imagery. GigaBench includes images collected, acquired, and synthetically rendered across diverse domains, and addresses image compression and super-resolution. We adapt a representative set of LRs, spanning Implicit, Hybrid, and Explicit methods, so as to operate reliably at the gigapixel scale on consumer hardware. Through systematic evaluation across reconstruction quality, model size, compression and inference times, we identify consistent trends across methods and suggest actionable guidance for future investigation.</p>
+  <section class="wrap results" id="superres" aria-labelledby="superres-title">
+    <h2 class="section-title" id="superres-title">GigaBench on super-resolution</h2>
+    <p class="section-lede">Each method is fitted on the image downsampled ×4 or ×8, then queried at full resolution and compared with the original. Classical interpolation is the reference to beat.</p>
+
+    <div class="metric-boxes">
+      <div class="metric-box">
+        <div class="metric-head">
+          <h3>Quality</h3>
+          <div class="seg" role="group" aria-label="Super-resolution metric">
+            <button type="button" data-sr-metric="psnr" aria-pressed="true">PSNR <span class="better" title="Higher is better"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span class="sr-only">higher is better</span></span></button>
+            <button type="button" data-sr-metric="ssim" aria-pressed="false">SSIM <span class="better" title="Higher is better"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span class="sr-only">higher is better</span></span></button>
+            <button type="button" data-sr-metric="lpips" aria-pressed="false">LPIPS <span class="better" title="Lower is better"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg><span class="sr-only">lower is better</span></span></button>
+            <button type="button" data-sr-metric="elo" aria-pressed="false">Elo <span class="better" title="Higher is better"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg><span class="sr-only">higher is better</span></span></button>
+          </div>
+        </div>
+        <p class="metric-desc" id="sr-metric-desc"></p>
+      </div>
+      <div class="metric-box">
+        <div class="metric-head">
+          <h3>Upsampling</h3>
+          <div class="seg" role="group" aria-label="Upsampling factor">
+            <button type="button" data-sr-scale="x4" aria-pressed="true">×4</button>
+            <button type="button" data-sr-scale="x8" aria-pressed="false">×8</button>
+          </div>
+        </div>
+        <p class="metric-desc" id="sr-scale-desc"></p>
+      </div>
+    </div>
+
+    <div class="results-grid no-switch">
+      <figure class="chart-card">
+        <div class="chart" id="sr-chart">
+          <svg class="chart-svg" id="sr-chart-svg" role="img" aria-labelledby="superres-title"></svg>
+          <div class="chart-tip" id="sr-tip" hidden></div>
+        </div>
+      </figure>
+
+      <div class="chart-below">
+        <p class="chart-hint" id="sr-hint"></p>
+        <div class="legend" id="sr-legend"></div>
+        <details class="numbers">
+          <summary>Show all numbers</summary>
+          <div class="table-scroll"><table id="sr-numbers-table"></table></div>
+        </details>
+      </div>
+
+      <aside class="takeaways" aria-labelledby="sr-takeaways-title">
+        <h3 id="sr-takeaways-title">Take-home messages</h3>
+        <ul id="sr-takeaways"></ul>
+        <p class="takeaways-hint">Select a message to read it and highlight its results.</p>
+      </aside>
+    </div>
   </section>
 
   <section class="wrap citation" id="citation" aria-labelledby="citation-title">
-    <div class="citation-head">
-      <h2 id="citation-title">Citation</h2>
-      <button type="button" class="text-btn" id="copy-bibtex">Copy BibTeX</button>
-    </div>
-<pre id="bibtex">@inproceedings{fusconi2027benchmarking,
+    <h2 id="citation-title">Citation</h2>
+
+    <div class="cite-block">
+      <div class="citation-head">
+        <p>If you use GigaBench, please cite:</p>
+        <button type="button" class="text-btn" data-copy="bibtex-gigabench">Copy BibTeX</button>
+      </div>
+<pre id="bibtex-gigabench">@inproceedings{fusconi2027benchmarking,
   title     = {{Benchmarking Learnable Representations for Gigapixel Image Compression and Super-Resolution}},
   author    = {Fusconi, Matteo and Costanzino, Alex and Zama Ramirez, Pierluigi and Di Stefano, Luigi},
   booktitle = {IEEE/CVF Winter Conference on Applications of Computer Vision},
   year      = {2027}
 }</pre>
+    </div>
+
+    <div class="cite-block">
+      <div class="citation-head">
+        <p>If you use the histopathology images, please also cite their source datasets:</p>
+        <button type="button" class="text-btn" data-copy="bibtex-datasets">Copy BibTeX</button>
+      </div>
+<pre id="bibtex-datasets">@article{brancati2022bracs,
+  title     = {{BRACS}: A Dataset for {BReAst} Carcinoma Subtyping in {H\&amp;E} Histology Images},
+  author    = {Brancati, Nadia and Anniciello, Anna Maria and Pati, Pushpak and Riccio, Daniel and Scognamiglio, Giosu{\`e} and Jaume, Guillaume and De Pietro, Giuseppe and Di Bonito, Maurizio and Foncubierta, Antonio and Botti, Gerardo and others},
+  journal   = {Database},
+  publisher = {Oxford University Press},
+  volume    = {2022},
+  year      = {2022}
+}
+
+@article{deng2025kpis2024challengeadvancing,
+  title   = {{KPIs} 2024 Challenge: Advancing Glomerular Segmentation from Patch- to Slide-Level},
+  author  = {Deng, Ruining and Yao, Tianyuan and Tang, Yucheng and Guo, Junlin and Lu, Siqi and Xiong, Juming and Yu, Lining and Cap, Quan Huu and Cai, Pengzhou and Lan, Libin and Zhao, Ze and Galdran, Adrian and Kumar, Amit and Deotale, Gunjan and Das, Dev Kumar and Paik, Inyoung and Lee, Joonho and Lee, Geongyu and Chen, Yujia and Li, Wangkai and Li, Zhaoyang and Hou, Xuege and Wu, Zeyuan and Wang, Shengjin and Fischer, Maximilian and Kramer, Lars and Du, Anghong and Zhang, Le and Sanchez Sanchez, Maria and Sanchez Ulloa, Helena and Ribalta Heredia, David and Perez de Arenaza Garcia, Carlos and Xu, Shuoyu and He, Bingdou and Cheng, Xinping and Wang, Tao and Moreau, Noemie and Bozek, Katarzyna and Innani, Shubham and Baid, Ujjwal and Kefas, Kaura Solomon and Landman, Bennett A. and Wang, Yu and Zhao, Shilin and Yin, Mengmeng and Yang, Haichun and Huo, Yuankai},
+  journal = {Medical Image Analysis},
+  year    = {2025}
+}
+
+@article{tang2026holohisto,
+  title   = {{HoloHisto}: End-to-end Gigapixel {WSI} Segmentation with {4K} Resolution Sequential Tokenization},
+  author  = {Tang, Yucheng and He, Yufan and Nath, Vishwesh and Guo, Pengfeig and Deng, Ruining and Yao, Tianyuan and Liu, Quan and Cui, Can and Yang, Yuechen and Yin, Mengmeng and Xu, Ziyue and Roth, Holger and Xu, Daguang and Yang, Haichun and Huo, Yuankai},
+  journal = {Electronic Imaging},
+  year    = {2026}
+}</pre>
+    </div>
   </section>
 </main>
 
@@ -193,5 +274,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/4.1.1/openseadragon.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/compression.js"></script>
+<script src="js/superres.js"></script>
 </body>
 </html>

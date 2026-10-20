@@ -12,6 +12,7 @@
   --implicit: #0072B2;
   --hybrid: #009E73;
   --explicit: #D55E00;
+  --classic: #7F7F7F;   /* the reference baseline, deliberately grey */
 
   --gutter: clamp(16px, 4vw, 48px);
   --max: 1240px;
@@ -477,33 +478,36 @@ h2 {
   margin-top: 50px;
 }
 .view-switch { grid-area: switch; justify-self: start; }
+.results-grid.no-switch { grid-template-areas: "chart aside" "below aside"; grid-template-rows: auto 1fr; }
 .chart-card { grid-area: chart; margin: 0; }
 .chart-below { grid-area: below; }
 /* Starts under the view switch, level with the top of the plot */
 .takeaways { grid-area: aside; align-self: start; margin-top: 12px; }
 .view-switch { margin-top: 0; }
 .chart { position: relative; margin-top: 12px; }
+.chart-svg { display: block; }
 #chart-svg { display: block; touch-action: pan-y; cursor: grab; user-select: none; }
 #chart-svg.dragging { cursor: grabbing; }
 
-#chart-svg .grid-lines { stroke: var(--rule); stroke-width: 1; fill: none; }
-#chart-svg .grid-minor { stroke: var(--rule); stroke-width: 1; fill: none; opacity: 0.3; }
-#chart-svg .edge-lines { stroke: var(--rule); stroke-width: 1; fill: none; }
-#chart-svg .axis text { fill: var(--muted); font-size: 12px; }
-#chart-svg .axis .axis-title { fill: var(--ink); font-size: 13px; font-weight: 600; }
+.chart-svg .grid-lines { stroke: var(--rule); stroke-width: 1; fill: none; }
+.chart-svg .grid-minor { stroke: var(--rule); stroke-width: 1; fill: none; opacity: 0.3; }
+.chart-svg .edge-lines { stroke: var(--rule); stroke-width: 1; fill: none; }
+.chart-svg .axis text { fill: var(--muted); font-size: 12px; }
+.chart-svg .axis-title { fill: var(--ink); font-size: 13px; font-weight: 600; }
 
 /* Markers as in the paper's figures: family symbol and colour, thin dark outline */
-#chart-svg .pt .mark { stroke: rgb(0 0 0 / 0.75); stroke-width: 0.8; }
-#chart-svg .pt .hit { fill: transparent; }
-#chart-svg .pt { cursor: pointer; outline: none; transition: opacity 0.2s; }
-#chart-svg .pt:hover .mark, #chart-svg .pt:focus-visible .mark { stroke: var(--ink); stroke-width: 2; }
-#chart-svg .pt-label { display: none; fill: var(--ink); font-size: 12px; font-weight: 600; paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
-#chart-svg.has-highlight .pt.on .pt-label { display: block; }
-#chart-svg .fam-implicit { --fam: var(--implicit); }
-#chart-svg .fam-hybrid { --fam: var(--hybrid); }
-#chart-svg .fam-explicit { --fam: var(--explicit); }
-#chart-svg .pt .mark { fill: var(--fam); }
-#chart-svg.has-highlight .pt:not(.on) { opacity: 0.15; }
+.chart-svg .pt .mark { stroke: rgb(0 0 0 / 0.75); stroke-width: 0.8; }
+.chart-svg .pt .hit { fill: transparent; }
+.chart-svg .pt { cursor: pointer; outline: none; transition: opacity 0.2s; }
+.chart-svg .pt:hover .mark, .chart-svg .pt:focus-visible .mark { stroke: var(--ink); stroke-width: 2; }
+.chart-svg .pt-label { display: none; fill: var(--ink); font-size: 12px; font-weight: 600; paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
+.chart-svg.has-highlight .pt.on .pt-label { display: block; }
+.chart-svg .fam-implicit { --fam: var(--implicit); }
+.chart-svg .fam-hybrid { --fam: var(--hybrid); }
+.chart-svg .fam-explicit { --fam: var(--explicit); }
+.chart-svg .fam-classic { --fam: var(--classic); }
+.chart-svg .pt .mark { fill: var(--fam); }
+.chart-svg.has-highlight .pt:not(.on) { opacity: 0.15; }
 
 .chart-tip {
   position: absolute;
@@ -524,6 +528,26 @@ h2 {
 .tip-key.fam-implicit { --fam: var(--implicit); }
 .tip-key.fam-hybrid { --fam: var(--hybrid); }
 .tip-key.fam-explicit { --fam: var(--explicit); }
+.tip-key.fam-classic { --fam: var(--classic); }
+.chart-tip .tip-sub { margin: -2px 0 4px; color: var(--muted); font-size: 0.8rem; }
+
+/* Super-resolution: bars and Elo box plots, styled like the paper's figures */
+.chart-svg .bar-grid { stroke: var(--rule); stroke-width: 1; }
+.chart-svg .bar-base { stroke: var(--muted); stroke-width: 1; }
+.chart-svg .bar-hit { fill: transparent; }
+.chart-svg .bar, .chart-svg .box { cursor: pointer; outline: none; transition: opacity 0.2s; }
+.chart-svg .bar-fill, .chart-svg .box-fill { fill: var(--fam); stroke: rgb(0 0 0 / 0.75); stroke-width: 0.8; }
+.chart-svg .bar:hover .bar-fill, .chart-svg .bar:focus-visible .bar-fill,
+.chart-svg .box:hover .box-fill, .chart-svg .box:focus-visible .box-fill { stroke: var(--ink); stroke-width: 2; }
+.chart-svg .bar-label { fill: var(--muted); font-size: 11px; }
+.chart-svg .bar-value { display: none; fill: var(--ink); font-size: 11px; font-weight: 700; }
+.chart-svg.has-highlight .bar.on .bar-value { display: block; }
+.chart-svg.has-highlight .bar.on .bar-label { fill: var(--ink); font-weight: 600; }
+.chart-svg.has-highlight .bar:not(.on), .chart-svg.has-highlight .box:not(.on) { opacity: 0.2; }
+.chart-svg .whisker, .chart-svg .median { stroke: var(--ink); stroke-width: 1; }
+.chart-svg .median { stroke-width: 1.6; }
+.chart-svg .panel-title { fill: var(--ink); font-size: 12px; font-weight: 700; }
+.chart-svg .elo-panel.overall .panel-title { font-weight: 800; }
 
 .chart-hint { margin-top: 4px; color: var(--muted); font-size: 0.85rem; }
 
@@ -561,6 +585,11 @@ h2 {
 .legend-icon.fam-implicit { fill: var(--implicit); }
 .legend-icon.fam-hybrid { fill: var(--hybrid); }
 .legend-icon.fam-explicit { fill: var(--explicit); }
+.legend-swatch { width: 12px; height: 12px; border: 0.8px solid rgb(0 0 0 / 0.75); background: var(--fam); }
+.legend-swatch.fam-implicit { --fam: var(--implicit); }
+.legend-swatch.fam-hybrid { --fam: var(--hybrid); }
+.legend-swatch.fam-explicit { --fam: var(--explicit); }
+.legend-swatch.fam-classic { --fam: var(--classic); }
 
 .numbers { margin-top: 14px; }
 .numbers summary { cursor: pointer; color: var(--muted); font-size: 0.9rem; }
@@ -603,6 +632,7 @@ h2 {
 
 @media (max-width: 980px) {
   .results-grid { grid-template-columns: 1fr; grid-template-rows: none; grid-template-areas: "switch" "chart" "below" "aside"; }
+  .results-grid.no-switch { grid-template-rows: none; grid-template-areas: "chart" "below" "aside"; }
   .chart-below { margin-bottom: 32px; }
 }
 @media (max-width: 600px) {
@@ -612,6 +642,8 @@ h2 {
 
 /* Text sections --------------------------------------------------------- */
 .prose, .citation { padding-block: clamp(48px, 7vw, 88px) 0; }
+.cite-block + .cite-block { margin-top: 28px; }
+.citation-head p { color: var(--muted); }
 .prose h2, .citation h2 { margin-bottom: 16px; }
 .prose h2 { text-align: center; }
 .prose p {
@@ -629,6 +661,8 @@ h2 {
   gap: 16px;
 }
 .text-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
   padding: 6px 12px;
   border: 1px solid var(--rule);
   border-radius: 6px;

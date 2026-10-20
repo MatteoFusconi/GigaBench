@@ -1,0 +1,1148 @@
+{
+ "bars": [
+  {
+   "scale": "x4",
+   "method": "SIREN",
+   "config": "5,256",
+   "family": "Implicit",
+   "psnr": 20.99,
+   "ssim": 0.455,
+   "lpips": 0.6
+  },
+  {
+   "scale": "x4",
+   "method": "FINER",
+   "config": "5,256",
+   "family": "Implicit",
+   "psnr": 19.44,
+   "ssim": 0.442,
+   "lpips": 0.618
+  },
+  {
+   "scale": "x4",
+   "method": "FDHO",
+   "config": "5,256",
+   "family": "Implicit",
+   "psnr": 18.92,
+   "ssim": 0.438,
+   "lpips": 0.592
+  },
+  {
+   "scale": "x4",
+   "method": "SIREN",
+   "config": "8,1024",
+   "family": "Implicit",
+   "psnr": 22.31,
+   "ssim": 0.483,
+   "lpips": 0.549
+  },
+  {
+   "scale": "x4",
+   "method": "FINER",
+   "config": "8,1024",
+   "family": "Implicit",
+   "psnr": 22.89,
+   "ssim": 0.495,
+   "lpips": 0.52
+  },
+  {
+   "scale": "x4",
+   "method": "FDHO",
+   "config": "8,1024",
+   "family": "Implicit",
+   "psnr": 19.34,
+   "ssim": 0.446,
+   "lpips": 0.616
+  },
+  {
+   "scale": "x4",
+   "method": "I-NGP",
+   "config": "T=22",
+   "family": "Hybrid",
+   "psnr": 27.09,
+   "ssim": 0.708,
+   "lpips": 0.381
+  },
+  {
+   "scale": "x4",
+   "method": "I-NGP",
+   "config": "T=24",
+   "family": "Hybrid",
+   "psnr": 27.11,
+   "ssim": 0.713,
+   "lpips": 0.368
+  },
+  {
+   "scale": "x4",
+   "method": "NeuRBF",
+   "config": "T=22",
+   "family": "Hybrid",
+   "psnr": 24.24,
+   "ssim": 0.554,
+   "lpips": 0.461
+  },
+  {
+   "scale": "x4",
+   "method": "NeuRBF",
+   "config": "T=24",
+   "family": "Hybrid",
+   "psnr": 25.11,
+   "ssim": 0.576,
+   "lpips": 0.423
+  },
+  {
+   "scale": "x4",
+   "method": "MetricGrids",
+   "config": "T=22",
+   "family": "Hybrid",
+   "psnr": 26.64,
+   "ssim": 0.674,
+   "lpips": 0.312
+  },
+  {
+   "scale": "x4",
+   "method": "MetricGrids",
+   "config": "T=24",
+   "family": "Hybrid",
+   "psnr": 26.86,
+   "ssim": 0.675,
+   "lpips": 0.313
+  },
+  {
+   "scale": "x4",
+   "method": "GaussianImage",
+   "config": "CR=3000",
+   "family": "Explicit",
+   "psnr": 15.65,
+   "ssim": 0.481,
+   "lpips": 0.759
+  },
+  {
+   "scale": "x4",
+   "method": "GaussianImage",
+   "config": "CR=100",
+   "family": "Explicit",
+   "psnr": 21.93,
+   "ssim": 0.596,
+   "lpips": 0.697
+  },
+  {
+   "scale": "x4",
+   "method": "GaussianImage",
+   "config": "CR=15",
+   "family": "Explicit",
+   "psnr": 17.07,
+   "ssim": 0.496,
+   "lpips": 0.645
+  },
+  {
+   "scale": "x4",
+   "method": "SmartSplat",
+   "config": "CR=3000",
+   "family": "Explicit",
+   "psnr": 24.04,
+   "ssim": 0.646,
+   "lpips": 0.53
+  },
+  {
+   "scale": "x4",
+   "method": "SmartSplat",
+   "config": "CR=100",
+   "family": "Explicit",
+   "psnr": 23.68,
+   "ssim": 0.677,
+   "lpips": 0.405
+  },
+  {
+   "scale": "x4",
+   "method": "SmartSplat",
+   "config": "CR=15",
+   "family": "Explicit",
+   "psnr": 18.75,
+   "ssim": 0.587,
+   "lpips": 0.475
+  },
+  {
+   "scale": "x4",
+   "method": "Nearest Neighbour",
+   "config": "",
+   "family": "Classic",
+   "psnr": 24.58,
+   "ssim": 0.63,
+   "lpips": 0.365
+  },
+  {
+   "scale": "x4",
+   "method": "Bicubic",
+   "config": "",
+   "family": "Classic",
+   "psnr": 26.0,
+   "ssim": 0.689,
+   "lpips": 0.339
+  },
+  {
+   "scale": "x4",
+   "method": "Lanczos",
+   "config": "",
+   "family": "Classic",
+   "psnr": 25.82,
+   "ssim": 0.682,
+   "lpips": 0.349
+  },
+  {
+   "scale": "x8",
+   "method": "SIREN",
+   "config": "5,256",
+   "family": "Implicit",
+   "psnr": 20.85,
+   "ssim": 0.453,
+   "lpips": 0.606
+  },
+  {
+   "scale": "x8",
+   "method": "FINER",
+   "config": "5,256",
+   "family": "Implicit",
+   "psnr": 20.07,
+   "ssim": 0.447,
+   "lpips": 0.617
+  },
+  {
+   "scale": "x8",
+   "method": "FDHO",
+   "config": "5,256",
+   "family": "Implicit",
+   "psnr": 19.73,
+   "ssim": 0.443,
+   "lpips": 0.595
+  },
+  {
+   "scale": "x8",
+   "method": "SIREN",
+   "config": "8,1024",
+   "family": "Implicit",
+   "psnr": 21.76,
+   "ssim": 0.469,
+   "lpips": 0.541
+  },
+  {
+   "scale": "x8",
+   "method": "FINER",
+   "config": "8,1024",
+   "family": "Implicit",
+   "psnr": 21.2,
+   "ssim": 0.461,
+   "lpips": 0.584
+  },
+  {
+   "scale": "x8",
+   "method": "FDHO",
+   "config": "8,1024",
+   "family": "Implicit",
+   "psnr": 20.42,
+   "ssim": 0.448,
+   "lpips": 0.627
+  },
+  {
+   "scale": "x8",
+   "method": "I-NGP",
+   "config": "T=22",
+   "family": "Hybrid",
+   "psnr": 24.27,
+   "ssim": 0.631,
+   "lpips": 0.493
+  },
+  {
+   "scale": "x8",
+   "method": "I-NGP",
+   "config": "T=24",
+   "family": "Hybrid",
+   "psnr": 24.25,
+   "ssim": 0.63,
+   "lpips": 0.494
+  },
+  {
+   "scale": "x8",
+   "method": "NeuRBF",
+   "config": "T=22",
+   "family": "Hybrid",
+   "psnr": 22.95,
+   "ssim": 0.495,
+   "lpips": 0.573
+  },
+  {
+   "scale": "x8",
+   "method": "NeuRBF",
+   "config": "T=24",
+   "family": "Hybrid",
+   "psnr": 23.63,
+   "ssim": 0.528,
+   "lpips": 0.538
+  },
+  {
+   "scale": "x8",
+   "method": "MetricGrids",
+   "config": "T=22",
+   "family": "Hybrid",
+   "psnr": 24.21,
+   "ssim": 0.6,
+   "lpips": 0.456
+  },
+  {
+   "scale": "x8",
+   "method": "MetricGrids",
+   "config": "T=24",
+   "family": "Hybrid",
+   "psnr": 24.51,
+   "ssim": 0.614,
+   "lpips": 0.453
+  },
+  {
+   "scale": "x8",
+   "method": "GaussianImage",
+   "config": "CR=3000",
+   "family": "Explicit",
+   "psnr": 19.72,
+   "ssim": 0.583,
+   "lpips": 0.75
+  },
+  {
+   "scale": "x8",
+   "method": "GaussianImage",
+   "config": "CR=100",
+   "family": "Explicit",
+   "psnr": 20.64,
+   "ssim": 0.561,
+   "lpips": 0.686
+  },
+  {
+   "scale": "x8",
+   "method": "GaussianImage",
+   "config": "CR=15",
+   "family": "Explicit",
+   "psnr": 9.23,
+   "ssim": 0.51,
+   "lpips": 0.692
+  },
+  {
+   "scale": "x8",
+   "method": "SmartSplat",
+   "config": "CR=3000",
+   "family": "Explicit",
+   "psnr": 22.83,
+   "ssim": 0.635,
+   "lpips": 0.534
+  },
+  {
+   "scale": "x8",
+   "method": "SmartSplat",
+   "config": "CR=100",
+   "family": "Explicit",
+   "psnr": 19.69,
+   "ssim": 0.605,
+   "lpips": 0.51
+  },
+  {
+   "scale": "x8",
+   "method": "SmartSplat",
+   "config": "CR=15",
+   "family": "Explicit",
+   "psnr": 15.68,
+   "ssim": 0.45,
+   "lpips": 0.585
+  },
+  {
+   "scale": "x8",
+   "method": "Nearest Neighbour",
+   "config": "",
+   "family": "Classic",
+   "psnr": 22.45,
+   "ssim": 0.589,
+   "lpips": 0.506
+  },
+  {
+   "scale": "x8",
+   "method": "Bicubic",
+   "config": "",
+   "family": "Classic",
+   "psnr": 23.57,
+   "ssim": 0.635,
+   "lpips": 0.516
+  },
+  {
+   "scale": "x8",
+   "method": "Lanczos",
+   "config": "",
+   "family": "Classic",
+   "psnr": 23.39,
+   "ssim": 0.63,
+   "lpips": 0.534
+  }
+ ],
+ "elo": {
+  "x4": {
+   "Breast Cancer": {
+    "Implicit": {
+     "q1": 853.6,
+     "median": 869.7,
+     "q3": 885.0,
+     "lo": 807.2,
+     "hi": 925.6,
+     "mean": 868.1,
+     "std": 23.3
+    },
+    "Hybrid": {
+     "q1": 1319.7,
+     "median": 1342.0,
+     "q3": 1366.9,
+     "lo": 1249.7,
+     "hi": 1431.2,
+     "mean": 1343.7,
+     "std": 34.0
+    },
+    "Explicit": {
+     "q1": 432.1,
+     "median": 466.8,
+     "q3": 499.2,
+     "lo": 337.8,
+     "hi": 583.9,
+     "mean": 463.6,
+     "std": 50.3
+    },
+    "Classic": {
+     "q1": 1299.9,
+     "median": 1322.9,
+     "q3": 1347.3,
+     "lo": 1234.3,
+     "hi": 1415.3,
+     "mean": 1324.5,
+     "std": 33.6
+    }
+   },
+   "Calacatta Viola": {
+    "Implicit": {
+     "q1": 663.2,
+     "median": 687.1,
+     "q3": 708.3,
+     "lo": 598.4,
+     "hi": 766.3,
+     "mean": 682.9,
+     "std": 37.3
+    },
+    "Hybrid": {
+     "q1": 1361.6,
+     "median": 1387.0,
+     "q3": 1413.2,
+     "lo": 1290.4,
+     "hi": 1490.4,
+     "mean": 1390.4,
+     "std": 43.4
+    },
+    "Explicit": {
+     "q1": 571.4,
+     "median": 600.9,
+     "q3": 628.5,
+     "lo": 487.6,
+     "hi": 695.0,
+     "mean": 597.2,
+     "std": 44.6
+    },
+    "Classic": {
+     "q1": 1303.4,
+     "median": 1325.9,
+     "q3": 1349.3,
+     "lo": 1238.9,
+     "hi": 1417.5,
+     "mean": 1329.4,
+     "std": 38.2
+    }
+   },
+   "House of Chores": {
+    "Implicit": {
+     "q1": 1119.7,
+     "median": 1132.8,
+     "q3": 1147.5,
+     "lo": 1080.2,
+     "hi": 1187.3,
+     "mean": 1134.3,
+     "std": 22.1
+    },
+    "Hybrid": {
+     "q1": 1197.9,
+     "median": 1212.1,
+     "q3": 1228.8,
+     "lo": 1153.4,
+     "hi": 1274.8,
+     "mean": 1214.1,
+     "std": 25.5
+    },
+    "Explicit": {
+     "q1": 460.4,
+     "median": 502.7,
+     "q3": 536.9,
+     "lo": 385.9,
+     "hi": 626.7,
+     "mean": 492.4,
+     "std": 61.9
+    },
+    "Classic": {
+     "q1": 1140.5,
+     "median": 1156.9,
+     "q3": 1174.6,
+     "lo": 1090.8,
+     "hi": 1225.6,
+     "mean": 1159.1,
+     "std": 27.2
+    }
+   },
+   "Italy": {
+    "Implicit": {
+     "q1": 692.9,
+     "median": 720.8,
+     "q3": 746.7,
+     "lo": 613.5,
+     "hi": 813.1,
+     "mean": 715.6,
+     "std": 45.0
+    },
+    "Hybrid": {
+     "q1": 1305.5,
+     "median": 1329.7,
+     "q3": 1359.1,
+     "lo": 1244.4,
+     "hi": 1439.0,
+     "mean": 1335.8,
+     "std": 44.7
+    },
+    "Explicit": {
+     "q1": 514.4,
+     "median": 548.5,
+     "q3": 575.5,
+     "lo": 424.2,
+     "hi": 666.5,
+     "mean": 542.2,
+     "std": 51.0
+    },
+    "Classic": {
+     "q1": 1372.1,
+     "median": 1400.1,
+     "q3": 1432.9,
+     "lo": 1281.0,
+     "hi": 1519.1,
+     "mean": 1406.4,
+     "std": 50.1
+    }
+   },
+   "Lynxsdesign": {
+    "Implicit": {
+     "q1": 881.8,
+     "median": 895.1,
+     "q3": 906.3,
+     "lo": 845.2,
+     "hi": 940.5,
+     "mean": 893.2,
+     "std": 19.3
+    },
+    "Hybrid": {
+     "q1": 1232.1,
+     "median": 1248.9,
+     "q3": 1267.7,
+     "lo": 1183.7,
+     "hi": 1321.0,
+     "mean": 1250.5,
+     "std": 26.7
+    },
+    "Explicit": {
+     "q1": 534.6,
+     "median": 565.3,
+     "q3": 592.0,
+     "lo": 450.7,
+     "hi": 667.6,
+     "mean": 561.7,
+     "std": 41.9
+    },
+    "Classic": {
+     "q1": 1272.2,
+     "median": 1293.3,
+     "q3": 1315.1,
+     "lo": 1210.2,
+     "hi": 1376.2,
+     "mean": 1294.6,
+     "std": 31.7
+    }
+   },
+   "Kidney": {
+    "Implicit": {
+     "q1": 690.5,
+     "median": 704.6,
+     "q3": 720.0,
+     "lo": 646.7,
+     "hi": 762.2,
+     "mean": 704.3,
+     "std": 22.6
+    },
+    "Hybrid": {
+     "q1": 1160.8,
+     "median": 1173.0,
+     "q3": 1185.5,
+     "lo": 1124.6,
+     "hi": 1222.2,
+     "mean": 1173.7,
+     "std": 18.2
+    },
+    "Explicit": {
+     "q1": 994.0,
+     "median": 1007.4,
+     "q3": 1019.1,
+     "lo": 958.4,
+     "hi": 1056.0,
+     "mean": 1007.5,
+     "std": 18.7
+    },
+    "Classic": {
+     "q1": 1105.1,
+     "median": 1114.3,
+     "q3": 1124.2,
+     "lo": 1078.6,
+     "hi": 1152.8,
+     "mean": 1114.5,
+     "std": 14.0
+    }
+   },
+   "Munich": {
+    "Implicit": {
+     "q1": 645.6,
+     "median": 662.6,
+     "q3": 676.9,
+     "lo": 599.2,
+     "hi": 723.4,
+     "mean": 660.4,
+     "std": 23.5
+    },
+    "Hybrid": {
+     "q1": 1110.9,
+     "median": 1119.7,
+     "q3": 1130.4,
+     "lo": 1085.2,
+     "hi": 1158.5,
+     "mean": 1120.5,
+     "std": 14.2
+    },
+    "Explicit": {
+     "q1": 928.2,
+     "median": 941.8,
+     "q3": 957.3,
+     "lo": 884.7,
+     "hi": 1000.2,
+     "mean": 942.4,
+     "std": 21.3
+    },
+    "Classic": {
+     "q1": 1261.1,
+     "median": 1275.8,
+     "q3": 1290.3,
+     "lo": 1220.5,
+     "hi": 1329.1,
+     "mean": 1276.7,
+     "std": 21.4
+    }
+   },
+   "Overall": {
+    "Implicit": {
+     "q1": 839.1,
+     "median": 843.3,
+     "q3": 847.2,
+     "lo": 827.5,
+     "hi": 859.3,
+     "mean": 843.2,
+     "std": 5.9
+    },
+    "Hybrid": {
+     "q1": 1197.1,
+     "median": 1201.0,
+     "q3": 1205.4,
+     "lo": 1185.5,
+     "hi": 1217.5,
+     "mean": 1201.2,
+     "std": 6.3
+    },
+    "Explicit": {
+     "q1": 722.1,
+     "median": 728.1,
+     "q3": 733.2,
+     "lo": 706.3,
+     "hi": 749.7,
+     "mean": 727.8,
+     "std": 8.4
+    },
+    "Classic": {
+     "q1": 1222.5,
+     "median": 1227.6,
+     "q3": 1232.7,
+     "lo": 1208.8,
+     "hi": 1247.9,
+     "mean": 1227.8,
+     "std": 7.5
+    }
+   },
+   "Statuario": {
+    "Implicit": {
+     "q1": 796.5,
+     "median": 811.1,
+     "q3": 826.6,
+     "lo": 752.0,
+     "hi": 870.6,
+     "mean": 810.9,
+     "std": 23.2
+    },
+    "Hybrid": {
+     "q1": 1197.9,
+     "median": 1213.2,
+     "q3": 1228.6,
+     "lo": 1156.1,
+     "hi": 1274.1,
+     "mean": 1213.8,
+     "std": 22.6
+    },
+    "Explicit": {
+     "q1": 746.9,
+     "median": 765.0,
+     "q3": 779.9,
+     "lo": 698.1,
+     "hi": 824.7,
+     "mean": 763.2,
+     "std": 24.7
+    },
+    "Classic": {
+     "q1": 1195.5,
+     "median": 1211.5,
+     "q3": 1226.9,
+     "lo": 1149.1,
+     "hi": 1272.8,
+     "mean": 1212.0,
+     "std": 24.4
+    }
+   },
+   "Venice": {
+    "Implicit": {
+     "q1": 692.1,
+     "median": 726.1,
+     "q3": 755.4,
+     "lo": 598.2,
+     "hi": 832.3,
+     "mean": 715.9,
+     "std": 61.8
+    },
+    "Hybrid": {
+     "q1": 1330.5,
+     "median": 1359.8,
+     "q3": 1400.1,
+     "lo": 1253.8,
+     "hi": 1504.3,
+     "mean": 1371.7,
+     "std": 65.0
+    },
+    "Explicit": {
+     "q1": 193.4,
+     "median": 254.5,
+     "q3": 306.0,
+     "lo": 27.9,
+     "hi": 429.0,
+     "mean": 243.2,
+     "std": 91.5
+    },
+    "Classic": {
+     "q1": 1612.7,
+     "median": 1659.6,
+     "q3": 1711.1,
+     "lo": 1495.1,
+     "hi": 1857.3,
+     "mean": 1669.2,
+     "std": 84.3
+    }
+   }
+  },
+  "x8": {
+   "Breast Cancer": {
+    "Implicit": {
+     "q1": 827.6,
+     "median": 842.1,
+     "q3": 857.5,
+     "lo": 783.2,
+     "hi": 902.2,
+     "mean": 841.4,
+     "std": 24.0
+    },
+    "Hybrid": {
+     "q1": 1260.3,
+     "median": 1279.5,
+     "q3": 1299.8,
+     "lo": 1201.7,
+     "hi": 1357.9,
+     "mean": 1281.1,
+     "std": 30.1
+    },
+    "Explicit": {
+     "q1": 603.2,
+     "median": 627.7,
+     "q3": 650.4,
+     "lo": 532.7,
+     "hi": 719.6,
+     "mean": 626.0,
+     "std": 35.7
+    },
+    "Classic": {
+     "q1": 1232.8,
+     "median": 1250.2,
+     "q3": 1269.2,
+     "lo": 1183.8,
+     "hi": 1323.1,
+     "mean": 1251.5,
+     "std": 27.1
+    }
+   },
+   "Calacatta Viola": {
+    "Implicit": {
+     "q1": 720.8,
+     "median": 737.5,
+     "q3": 752.3,
+     "lo": 674.2,
+     "hi": 799.1,
+     "mean": 735.9,
+     "std": 24.6
+    },
+    "Hybrid": {
+     "q1": 1303.1,
+     "median": 1323.4,
+     "q3": 1347.5,
+     "lo": 1246.0,
+     "hi": 1413.1,
+     "mean": 1326.3,
+     "std": 32.6
+    },
+    "Explicit": {
+     "q1": 667.5,
+     "median": 690.9,
+     "q3": 710.5,
+     "lo": 606.1,
+     "hi": 768.3,
+     "mean": 688.4,
+     "std": 30.8
+    },
+    "Classic": {
+     "q1": 1234.3,
+     "median": 1248.2,
+     "q3": 1262.9,
+     "lo": 1194.8,
+     "hi": 1303.7,
+     "mean": 1249.4,
+     "std": 22.1
+    }
+   },
+   "House of Chores": {
+    "Implicit": {
+     "q1": 1008.8,
+     "median": 1018.7,
+     "q3": 1027.5,
+     "lo": 980.9,
+     "hi": 1054.6,
+     "mean": 1018.2,
+     "std": 14.5
+    },
+    "Hybrid": {
+     "q1": 1177.9,
+     "median": 1191.8,
+     "q3": 1209.3,
+     "lo": 1132.9,
+     "hi": 1252.5,
+     "mean": 1193.1,
+     "std": 23.3
+    },
+    "Explicit": {
+     "q1": 584.6,
+     "median": 609.6,
+     "q3": 632.2,
+     "lo": 513.3,
+     "hi": 698.6,
+     "mean": 607.5,
+     "std": 34.8
+    },
+    "Classic": {
+     "q1": 1167.9,
+     "median": 1180.6,
+     "q3": 1193.8,
+     "lo": 1129.3,
+     "hi": 1232.0,
+     "mean": 1181.2,
+     "std": 18.8
+    }
+   },
+   "Italy": {
+    "Implicit": {
+     "q1": 569.4,
+     "median": 590.0,
+     "q3": 607.6,
+     "lo": 515.2,
+     "hi": 660.5,
+     "mean": 588.2,
+     "std": 28.0
+    },
+    "Hybrid": {
+     "q1": 1289.2,
+     "median": 1304.9,
+     "q3": 1321.4,
+     "lo": 1244.2,
+     "hi": 1369.6,
+     "mean": 1305.8,
+     "std": 23.5
+    },
+    "Explicit": {
+     "q1": 802.6,
+     "median": 819.5,
+     "q3": 834.8,
+     "lo": 755.7,
+     "hi": 880.9,
+     "mean": 818.7,
+     "std": 25.5
+    },
+    "Classic": {
+     "q1": 1271.3,
+     "median": 1285.8,
+     "q3": 1302.4,
+     "lo": 1229.2,
+     "hi": 1347.9,
+     "mean": 1287.3,
+     "std": 23.9
+    }
+   },
+   "Lynxsdesign": {
+    "Implicit": {
+     "q1": 844.2,
+     "median": 856.4,
+     "q3": 868.8,
+     "lo": 807.7,
+     "hi": 905.5,
+     "mean": 856.4,
+     "std": 18.6
+    },
+    "Hybrid": {
+     "q1": 1090.1,
+     "median": 1100.1,
+     "q3": 1110.7,
+     "lo": 1061.4,
+     "hi": 1141.5,
+     "mean": 1100.6,
+     "std": 15.7
+    },
+    "Explicit": {
+     "q1": 807.7,
+     "median": 823.2,
+     "q3": 836.6,
+     "lo": 766.5,
+     "hi": 879.6,
+     "mean": 822.2,
+     "std": 21.3
+    },
+    "Classic": {
+     "q1": 1206.7,
+     "median": 1220.1,
+     "q3": 1235.1,
+     "lo": 1168.0,
+     "hi": 1274.8,
+     "mean": 1220.8,
+     "std": 21.8
+    }
+   },
+   "Kidney": {
+    "Implicit": {
+     "q1": 906.4,
+     "median": 915.0,
+     "q3": 923.4,
+     "lo": 883.3,
+     "hi": 948.8,
+     "mean": 914.9,
+     "std": 12.9
+    },
+    "Hybrid": {
+     "q1": 1091.3,
+     "median": 1102.7,
+     "q3": 1115.4,
+     "lo": 1056.6,
+     "hi": 1150.7,
+     "mean": 1103.5,
+     "std": 19.2
+    },
+    "Explicit": {
+     "q1": 867.1,
+     "median": 880.1,
+     "q3": 892.4,
+     "lo": 829.4,
+     "hi": 928.4,
+     "mean": 879.4,
+     "std": 18.8
+    },
+    "Classic": {
+     "q1": 1093.2,
+     "median": 1102.2,
+     "q3": 1110.9,
+     "lo": 1067.7,
+     "hi": 1136.1,
+     "mean": 1102.2,
+     "std": 13.0
+    }
+   },
+   "Munich": {
+    "Implicit": {
+     "q1": 690.4,
+     "median": 706.8,
+     "q3": 720.3,
+     "lo": 649.3,
+     "hi": 763.5,
+     "mean": 705.4,
+     "std": 22.4
+    },
+    "Hybrid": {
+     "q1": 1121.4,
+     "median": 1131.5,
+     "q3": 1142.4,
+     "lo": 1090.2,
+     "hi": 1173.3,
+     "mean": 1131.7,
+     "std": 15.3
+    },
+    "Explicit": {
+     "q1": 985.5,
+     "median": 998.6,
+     "q3": 1012.3,
+     "lo": 947.9,
+     "hi": 1051.6,
+     "mean": 998.7,
+     "std": 19.6
+    },
+    "Classic": {
+     "q1": 1153.7,
+     "median": 1164.4,
+     "q3": 1174.5,
+     "lo": 1125.2,
+     "hi": 1205.6,
+     "mean": 1164.3,
+     "std": 16.3
+    }
+   },
+   "Overall": {
+    "Implicit": {
+     "q1": 812.1,
+     "median": 816.5,
+     "q3": 820.5,
+     "lo": 800.1,
+     "hi": 832.9,
+     "mean": 816.4,
+     "std": 6.1
+    },
+    "Hybrid": {
+     "q1": 1175.3,
+     "median": 1179.4,
+     "q3": 1183.8,
+     "lo": 1163.9,
+     "hi": 1196.3,
+     "mean": 1179.6,
+     "std": 6.4
+    },
+    "Explicit": {
+     "q1": 797.4,
+     "median": 802.0,
+     "q3": 806.7,
+     "lo": 783.9,
+     "hi": 820.4,
+     "mean": 802.1,
+     "std": 7.0
+    },
+    "Classic": {
+     "q1": 1197.6,
+     "median": 1202.0,
+     "q3": 1205.9,
+     "lo": 1185.4,
+     "hi": 1218.3,
+     "mean": 1201.9,
+     "std": 6.2
+    }
+   },
+   "Statuario": {
+    "Implicit": {
+     "q1": 608.0,
+     "median": 631.7,
+     "q3": 652.3,
+     "lo": 541.7,
+     "hi": 705.2,
+     "mean": 629.7,
+     "std": 32.7
+    },
+    "Hybrid": {
+     "q1": 1272.7,
+     "median": 1291.8,
+     "q3": 1312.5,
+     "lo": 1215.3,
+     "hi": 1370.9,
+     "mean": 1293.8,
+     "std": 29.3
+    },
+    "Explicit": {
+     "q1": 736.2,
+     "median": 756.1,
+     "q3": 776.5,
+     "lo": 675.9,
+     "hi": 829.6,
+     "mean": 754.9,
+     "std": 28.6
+    },
+    "Classic": {
+     "q1": 1298.4,
+     "median": 1319.5,
+     "q3": 1341.8,
+     "lo": 1241.3,
+     "hi": 1404.8,
+     "mean": 1321.6,
+     "std": 31.7
+    }
+   },
+   "Venice": {
+    "Implicit": {
+     "q1": 688.3,
+     "median": 706.9,
+     "q3": 724.9,
+     "lo": 633.5,
+     "hi": 771.8,
+     "mean": 705.4,
+     "std": 28.7
+    },
+    "Hybrid": {
+     "q1": 1217.7,
+     "median": 1235.3,
+     "q3": 1253.1,
+     "lo": 1171.0,
+     "hi": 1304.2,
+     "mean": 1237.0,
+     "std": 27.5
+    },
+    "Explicit": {
+     "q1": 623.8,
+     "median": 644.8,
+     "q3": 666.3,
+     "lo": 560.3,
+     "hi": 718.3,
+     "mean": 644.0,
+     "std": 32.3
+    },
+    "Classic": {
+     "q1": 1389.8,
+     "median": 1411.0,
+     "q3": 1434.8,
+     "lo": 1326.0,
+     "hi": 1500.1,
+     "mean": 1413.6,
+     "std": 34.3
+    }
+   }
+  }
+ }
+}

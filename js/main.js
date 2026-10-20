@@ -251,15 +251,17 @@ window.addEventListener("hashchange", () => select(location.hash.slice(1)));
 
 // Citation --------------------------------------------------------------------
 
-const copyButton = $("copy-bibtex");
-copyButton.addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText($("bibtex").textContent);
-    copyButton.textContent = "Copied";
-  } catch {
-    copyButton.textContent = "Select the text to copy";
-  }
-  setTimeout(() => { copyButton.textContent = "Copy BibTeX"; }, 2000);
+// Each "Copy BibTeX" button copies the block named in its data-copy attribute.
+document.querySelectorAll("[data-copy]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText($(button.dataset.copy).textContent);
+      button.textContent = "Copied";
+    } catch {
+      button.textContent = "Select the text to copy";
+    }
+    setTimeout(() => { button.textContent = "Copy BibTeX"; }, 2000);
+  });
 });
 
 // Start -----------------------------------------------------------------------
